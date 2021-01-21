@@ -1,4 +1,4 @@
-<h1 align="center">ExpressJS - coffeeShop RESTfull API</h1>
+<h1 align="center">ExpressJS - TeleApp RESTfull API</h1>
 
 this project was created to backend my [coffeeshop](https://acupofcoffee.netlify.app/) website.
 
@@ -43,5 +43,3 @@ DB_DATABASE=coffeeshop
 ## License
 
 © [Anka Abdullah](https://github.com/Anka-Abdullah)
-
-https://docs.google.com/presentation/d/1ElC_POOUhnf21fdHymLwHl6oJ6BhLVkqHlPXsPR7sDg/edit?usp=sharing
