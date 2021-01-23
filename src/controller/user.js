@@ -29,6 +29,7 @@ module.exports = {
               email,
               status,
               phoneNumber,
+              bio,
               lat,
               lng,
               image
@@ -39,6 +40,7 @@ module.exports = {
               email,
               status,
               phoneNumber,
+              bio,
               lat,
               lng,
               image
@@ -81,10 +83,11 @@ module.exports = {
   patchUser: async (req, res) => {
     try {
       const { id } = req.params
-      const { userName, phoneNumber, lat, lng } = req.body
+      const { userName, phoneNumber, bio, lat, lng } = req.body
       const data = {
         userName,
         phoneNumber,
+        bio,
         lat,
         lng,
         updatedAt: new Date()
