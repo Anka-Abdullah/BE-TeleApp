@@ -83,13 +83,14 @@ module.exports = {
   patchUser: async (req, res) => {
     try {
       const { id } = req.params
-      const { userName, phoneNumber, bio, lat, lng } = req.body
+      const { userName, phoneNumber, bio, coordinate } = req.body
       const data = {
         userName,
         phoneNumber,
         bio,
-        lat,
-        lng,
+        coordinate,
+        lat: coordinate.split(',')[0],
+        lng: coordinate.split(',')[1],
         updatedAt: new Date()
       }
       const result = await patchUser(id, data)
