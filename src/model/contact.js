@@ -1,10 +1,9 @@
 const { actionQuery } = require('../helper/helper')
 module.exports = {
   get: (id, search) => {
-    if (search === null) {
+    if (search == null) {
       return actionQuery(
-        'select * from contact join user on contact.friendId = user.userId where contact.userId = ?',
-        id
+        `select * from contact join user on contact.friendId = user.userId where contact.userId = ${id}`
       )
     } else {
       return actionQuery(`select * from user where email= '${search}'`)

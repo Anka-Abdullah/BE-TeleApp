@@ -5,6 +5,7 @@ module.exports = {
     try {
       const { search, id } = req.query
       const result = await get(id, search)
+      console.log(result)
       return response(res, 200, 'success get contact', result)
     } catch (error) {
       return response(res, 400, 'Bad request', error)
