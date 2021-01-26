@@ -7,20 +7,6 @@ const cors = require('cors')
 const routesNavigation = require('./src/routesNavigation')
 const socket = require('socket.io')
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-app.use(morgan('dev'))
-app.use(cors())
-app.use(express.static('uploads'))
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header(
-    'Access-Control-Headers',
-    'Origin, X-Request-With, Content-Type, Accept, Authorization'
-  )
-  next()
-})
-
 const http = require('http')
 const server = http.createServer(app)
 const io = socket(server, {
@@ -56,6 +42,12 @@ io.on('connection', (socket) => {
     socket.broadcast.to(data.room).emit('typingMessage', data)
   })
 })
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(morgan('dev'))
+app.use(cors())
+app.use(express.static('uploads'))
 app.use('/', routesNavigation)
 
 app.get('*', (req, res) => {

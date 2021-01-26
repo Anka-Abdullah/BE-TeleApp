@@ -100,6 +100,15 @@ module.exports = {
       return response(res, 400, 'Bad request', error)
     }
   },
+  getUserById: async (req, res) => {
+    try {
+      const { id } = req.params
+      const result = await getUserById(id)
+      return response(res, 200, 'success', result)
+    } catch (error) {
+      return response(res, 400, 'Bad request', error)
+    }
+  },
   patchImage: async (req, res) => {
     try {
       const { id } = req.params

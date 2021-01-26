@@ -3,12 +3,13 @@ const multer = require('../midleware/multer')
 const {
   register,
   login,
+  getUserById,
   patchUser,
   patchImage,
   deleteImage
 } = require('../controller/user')
 // const {auth} =require('../midleware/auth')
-
+router.get('/:id', getUserById)
 router.post('/register', register)
 router.post('/login', login)
 router.patch('/:id', patchUser)

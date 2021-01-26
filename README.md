@@ -1,6 +1,6 @@
 <h1 align="center">ExpressJS - TeleApp RESTfull API</h1>
 
-this project was created to backend my [coffeeshop](https://acupofcoffee.netlify.app/) website.
+this project was created to backend my [TeleApp](https://netlify.app/) website.
 
 ####
 
@@ -27,7 +27,7 @@ this project was created to backend my [coffeeshop](https://acupofcoffee.netlify
 5. Create a database with the name #nama_database, and Import file sql to **phpmyadmin**
 6. Open Postman desktop application or Chrome web app extension that has installed before
 7. Choose HTTP Method and enter request url.(ex. localhost:3000/)
-8. You can see all the end point [here](https://documenter.getpostman.com/view/12479214/TVmV6ELC)
+8. You can see all the end point [here](https://documenter.getpostman.com/view/14171447/TW6upUsa)
 
 ## Set up .env file
 
@@ -37,7 +37,7 @@ Open .env file on your favorite code editor, and copy paste this code below :
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=
-DB_DATABASE=coffeeshop
+DB_DATABASE=teleapp
 ```
 
 ## License
