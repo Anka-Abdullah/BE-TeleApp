@@ -17,6 +17,7 @@ const io = socket(server, {
 
 io.on('connection', (socket) => {
   socket.on('globalMessage', (data) => {
+    console.log(data)
     io.emit('chatMessage', data)
   })
   socket.on('privateMessage', (data) => {
@@ -55,6 +56,9 @@ app.get('*', (req, res) => {
 })
 
 const port = process.env.PORT
+server.listen(4501, () => {
+  console.log('Listening socket')
+})
 app.listen(port, () => {
   console.log('Server is running')
 })
