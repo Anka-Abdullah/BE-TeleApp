@@ -56,9 +56,7 @@ app.get('*', (req, res) => {
 })
 
 const port = process.env.PORT
-server.listen(4501, () => {
-  console.log('Listening socket')
-})
-app.listen(port, () => {
+
+server.listen(port, () => {
   console.log('Server is running')
 })
