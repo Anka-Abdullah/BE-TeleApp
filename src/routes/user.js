@@ -8,7 +8,6 @@ const {
   patchImage,
   deleteImage
 } = require('../controller/user')
-// const {auth} =require('../midleware/auth')
 router.get('/:id', getUserById)
 router.post('/register', register)
 router.post('/login', login)
