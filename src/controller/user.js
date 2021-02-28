@@ -5,6 +5,7 @@ const { response } = require('../helper/response')
 const { register, cekEmail, patchUser, getUserById } = require('../model/user')
 const fs = require('fs')
 
+const dataRefreshToken = {}
 module.exports = {
   login: async (req, res) => {
     try {
@@ -46,9 +47,13 @@ module.exports = {
               image
             }
             const token = jwt.sign(payload, 'sayang', {
-              expiresIn: 7 * 24 * 60 * 60
+              expiresIn: '1h'
             })
-            const result = { ...payload, token }
+            const refreshToken = jwt.sign(payload, 'sayang', {
+              expiresIn: '7d'
+            })
+            dataRefreshToken[userId] = refreshToken
+            const result = { ...payload, token, refreshToken }
             return response(res, 200, 'Login success', result)
           }
         }

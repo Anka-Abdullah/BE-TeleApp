@@ -1,11 +1,20 @@
 const { actionQuery } = require('../helper/helper')
 module.exports = {
-  getMsg: (userId, friendId) => {
+  getRoom: (userId, friendId) => {
     return actionQuery(
-      `select * form message where userId=${userId} and friendId=${friendId}`
+      `select uniq from room where userA=${userId} and userB=${friendId}`
     )
   },
-  createMsg: (userId) => {
-    return actionQuery('insert into message ')
+  getMsg: (room) => {
+    return actionQuery(`select * from message where status=1 and room=?`, room)
+  },
+  createMsg: (data) => {
+    return actionQuery('insert into message set ?', data)
+  },
+  createRoom: (data) => {
+    return actionQuery(`insert into room set ?`, data)
+  },
+  deleteMsg: (msgId) => {
+    return actionQuery('update message set status=0 where messageId =?', msgId)
   }
 }
