@@ -17,6 +17,13 @@ module.exports = {
       return response(res, 400, 'Bad request', error)
     }
   },
+  getRoom: async (req, res) => {
+    try {
+      const { userA, userB } = req.query
+      const result = await getRoom(userA, userB)
+      return res.send(result[0])
+    } catch (error) {}
+  },
   createRoom: async (req, res) => {
     try {
       const { userA, userB } = req.body

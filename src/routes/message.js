@@ -9,6 +9,7 @@ const {
 } = require('../controller/message')
 
 router.get('/', getMsg)
+router.get('/room', getRoom)
 router.post('/', createMsg)
 router.post('/room/', createRoom)
 router.patch('/:id', deleteMsg)
